@@ -1,0 +1,36 @@
+/* Main color variables in light mode */
+:root {
+  --ifm-color-primary-darkest: #1e0434; /* 60% darker */
+  --ifm-color-primary-darker: #270642;  /* 50% darker */
+  --ifm-color-primary-dark: #300850;    /* 40% darker */
+  --ifm-color-primary: #541087;         /* Base color */
+  --ifm-color-primary-light: #6e2ba0;   /* 10% lighter */
+  --ifm-color-primary-lighter: #8840aa; /* 20% lighter */
+  --ifm-color-primary-lightest: #a254b3;/* 30% lighter */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Adjusted colors for readability in dark mode with light violet tones */
+[data-theme='dark'] {
+  --ifm-color-primary-darkest: #4b2c6b; /* Light violet tones */
+  --ifm-color-primary-darker: #624083;  /* Light violet tones */
+  --ifm-color-primary-dark: #7a559b;    /* Light violet tones */
+  --ifm-color-primary: #916ab3;         /* Base light violet */
+  --ifm-color-primary-light: #a77fc9;   /* 10% lighter violet */
+  --ifm-color-primary-lighter: #be95de; /* 20% lighter violet */
+  --ifm-color-primary-lightest: #d4aaf3;/* 30% lighter violet */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Hero section styling in light mode */
+.hero {
+  background-color: #541087; /* Base violet color */
+  color: white;
+}
+
+/* Adjust the hero section for dark mode to have similar violet tones */
+[data-theme='dark'] .hero {
+  background-color: #541087; /* Match the base violet color from light mode */
+  color: white;
+}

@@ -1,0 +1,13 @@
+
+edujbarrios:
+  name: Eduardo José Barrios García
+  title: LLM and Neural Networks researcher at Universidad de La Laguna
+  url: https://github.com/edujbarrios
+  image_url: https://github.com/slorber.png
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-sebastien-lorber-articles'
+  socials:
+    x: eyemadmusic
+    github: edujbarrios
+

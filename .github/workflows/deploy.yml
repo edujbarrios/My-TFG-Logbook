@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Docusaurus to GitHub Pages
 
 on:
   push:
@@ -24,20 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Instalar ewe globalmente y verificar la instalación
-      - name: Install ewe
-        run: |
-          npm install -g ewe
-          ewe --version  # Verifica que ewe se instaló correctamente
+      # Paso 4: Construir el sitio con npm run build
+      - name: Build the site
+        run: npm run build
 
-      # Paso 5: Construir el sitio con ewe
-      - name: Build the site with ewe
-        run: ewe build
-
-      # Paso 6: Desplegar en GitHub Pages
+      # Paso 5: Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build  # Directorio de salida del sitio estático
+
 

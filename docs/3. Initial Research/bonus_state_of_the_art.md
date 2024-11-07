@@ -20,4 +20,4 @@ They also have a paper explaining what LLaMA-Factory is:
 
 - [LLaMA-Factory Research Paper (arXiv)](https://arxiv.org/abs/2403.13372)
 
-It appears that combining fine-tuning with LLMs is an emerging research area. I'll stop exploring new resources for now and focus on the link I sent yesterday, but LLaMA-Factory could be an excellent reference for the state of the art.
+It appears that combining fine-tuning with LLMs is an emerging research area. I'll stop exploring new resources for now and focus on the previous LLM tool I found on the last page, and testing its code and capabilites, but LLaMA-Factory could be an excellent reference for the state of the art.

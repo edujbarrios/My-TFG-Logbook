@@ -1,13 +1,17 @@
-.name: Deploy Docusaurus to GitHub Pages
+# Nombre descriptivo del flujo de trabajo
+name: Deploy Docusaurus to GitHub Pages
 
+# Especifica cuándo debe ejecutarse el flujo de trabajo
 on:
   push:
     branches:
-      - main
+      - main  # Cambia 'main' por el nombre de la rama que usas, si es diferente
 
+# Definición de los trabajos a ejecutar
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+
     steps:
       # Paso 1: Clonar el repositorio
       - name: Check out the repo
@@ -37,3 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build  # Directorio de salida del sitio estático
+

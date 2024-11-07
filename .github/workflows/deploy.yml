@@ -1,0 +1,39 @@
+.name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Paso 1: Clonar el repositorio
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      # Paso 2: Configurar Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Paso 3: Instalar dependencias de Node.js
+      - name: Install dependencies
+        run: npm install
+
+      # Paso 4: Instalar ewe globalmente
+      - name: Install ewe
+        run: npm install -g ewe
+
+      # Paso 5: Construir el sitio con ewe
+      - name: Build the site with ewe
+        run: ewe build
+
+      # Paso 6: Desplegar en GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build  # Directorio de salida del sitio estático

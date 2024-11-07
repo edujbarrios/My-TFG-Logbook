@@ -5,4 +5,4 @@ This repository serves as the main source to store all my research during my gla
 **ToDO: Adding Spanish Version support.**
 
 ## Website
-Website: https://edujbarrios.github.io/edujbarrios/My-TFG-Logbook
+Website: https://edujbarrios.github.io/My-TFG-Logbook/

@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-This is a documentation site built as a logbook during Eduardo Jose Barrios García's research about AI tools to enhance glaucoma detection as part of his final degree thesis project.
+This is a documentation site built as a logbook during my research about AI tools to enhance glaucoma detection as part of my final degree thesis project.
       </>
     ),
   },

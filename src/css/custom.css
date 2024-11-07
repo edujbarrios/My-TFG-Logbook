@@ -9,6 +9,27 @@
   --ifm-color-primary-lightest: #a254b3;/* 30% lighter */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --title-color: #541087; /* Violet color for titles in light mode */
+}
+
+/* Title color in light mode */
+[data-theme='light'] h1,
+[data-theme='light'] h2,
+[data-theme='light'] h3,
+[data-theme='light'] h4,
+[data-theme='light'] h5,
+[data-theme='light'] h6 {
+  color: var(--title-color);
+}
+
+/* Ensure title colors remain unchanged in dark mode */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  color: inherit;
 }
 
 /* Adjusted colors for readability in dark mode with light violet tones */

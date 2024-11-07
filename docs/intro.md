@@ -4,8 +4,4 @@ sidebar_position: 1
 
 # Brief Explanation
 
-Here in this page I will explain how it the logbook structured
-
-## How information is detailed
-
-Firstly you will find a section that contains how the has been the deployment of my final degree thesis day by day
+Im my aim to have everything sorted, scheduled, planned and up to date, I decided to write down this website to have everything tracked as per dates, and notes about my overall research, feel free to check the left bar to know the exact contents of my research, step by step.

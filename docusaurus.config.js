@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My TFG Logbook',
-  tagline: 'Done by Eduardo José Barrios García at Universidad de La Laguna (Spain) as part of his work on glaucoma detection',
+  title: 'LLMs and Fine Tuning in glaucoma detection',
+  tagline: 'Main researching docs and blog',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -74,12 +74,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.jpg',
       navbar: {
-        title: 'My Logbook Documentation ',
+        title: 'LLMs and fine tuning in glaucoma detection ',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
@@ -103,22 +103,22 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Introduction to Docs',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Social Links',
             items: [
               {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'X - Not working by now',
+                href: 'https://x.com/test',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Important Links',
             items: [
               {
                 label: 'Blog',

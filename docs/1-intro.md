@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 ---
+# Overview
 
-# Brief Explanation
+To keep everything organized, scheduled, and easily accessible, I've created this website as a central place to track and document my research journey. Here, you’ll find a detailed roadmap with dates, notes, and step-by-step updates on each part of the project.
 
-Im my aim to have everything sorted, scheduled, planned and up to date, I decided to write down this website to have everything tracked as per dates, and notes about my overall research, feel free to check the left bar to know the exact contents of my research, step by step.
+Explore the sidebar to navigate through the different sections of my research, where I've outlined each phase with meticulous detail.
 
-Thanks to and https://portalciencia.ull.es/investigadores/81845/detalle https://portalciencia.ull.es/investigadores/152342/detalle for their tutoring in this project. Also thanks to all the people involved in this development,, researchers, doctors and etc.
+IThanks in advance to the team of Universidad de La Laguna, specifically the guidance and mentorship provided by [Silvia Alayón](https://portalciencia.ull.es/investigadores/81845/detalle) and [Jorge Hernández](https://portalciencia.ull.es/investigadores/152342/detalle), for their invaluable support in this project. Thanks as well to all the dedicated researchers, doctors, and professionals involved in the development of this work.

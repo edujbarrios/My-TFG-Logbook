@@ -1,13 +1,10 @@
-# Nombre descriptivo del flujo de trabajo
-name: Deploy Docusaurus to GitHub Pages
+name: Deploy to GitHub Pages
 
-# Especifica cuándo debe ejecutarse el flujo de trabajo
 on:
   push:
     branches:
-      - main  # Cambia 'main' por el nombre de la rama que usas, si es diferente
+      - main
 
-# Definición de los trabajos a ejecutar
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -27,9 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Instalar ewe globalmente
+      # Paso 4: Instalar ewe globalmente y verificar la instalación
       - name: Install ewe
-        run: npm install -g ewe
+        run: |
+          npm install -g ewe
+          ewe --version  # Verifica que ewe se instaló correctamente
 
       # Paso 5: Construir el sitio con ewe
       - name: Build the site with ewe

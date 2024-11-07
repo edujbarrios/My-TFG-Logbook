@@ -10,6 +10,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --title-color: #541087; /* Violet color for titles in light mode */
+  --header-title-color: white; /* White color for header title */
 }
 
 /* Title color in light mode */
@@ -54,4 +55,14 @@
 [data-theme='dark'] .hero {
   background-color: #541087; /* Match the base violet color from light mode */
   color: white;
+}
+
+/* Make all links bold */
+a {
+  font-weight: bold;
+}
+
+/* Header title color */
+.header-title {
+  color: var(--header-title-color); /* Set title in the header to white */
 }

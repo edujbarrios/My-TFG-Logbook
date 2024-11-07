@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_tfg_logbook=self.webpackChunkmy_tfg_logbook||[]).push([[903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/My-TFG-Logbook/es/blog","blogTitle":"Blog","authorsListPath":"/My-TFG-Logbook/es/blog/authors"}')}}]);

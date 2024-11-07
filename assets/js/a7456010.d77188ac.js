@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_tfg_logbook=self.webpackChunkmy_tfg_logbook||[]).push([[235],{8552:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

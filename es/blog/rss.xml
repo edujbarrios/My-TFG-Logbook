@@ -4,7 +4,7 @@
         <title>LLMs and Fine Tuning in glaucoma detection Blog</title>
         <link>https://edujbarrios.github.io/My-TFG-Logbook/es/blog</link>
         <description>LLMs and Fine Tuning in glaucoma detection Blog</description>
-        <lastBuildDate>Thu, 07 Nov 2024 01:24:11 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 07 Nov 2024 13:48:21 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>es</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Leveraging Neural Networks and Fine-Tuning in Large Language Models: A Synergy for Enhanced AI Capabilities]]></title>
             <link>https://edujbarrios.github.io/My-TFG-Logbook/es/blog/neural-networks-fine-tuning-llms</link>
             <guid>https://edujbarrios.github.io/My-TFG-Logbook/es/blog/neural-networks-fine-tuning-llms</guid>
-            <pubDate>Thu, 07 Nov 2024 01:24:11 GMT</pubDate>
+            <pubDate>Thu, 07 Nov 2024 13:48:21 GMT</pubDate>
             <description><![CDATA[In the realm of artificial intelligence, neural networks and fine-tuning are fundamental components that drive the capabilities of large language models (LLMs), like GPT-4 and beyond. The paper “LLaMA-Factory: Efficient Training Techniques for Large Language Models” delves into methods that optimize training, reduce costs, and improve the performance of LLMs. This article explores the interplay of neural networks, fine-tuning, and LLMs, along with practical insights into model improvement with references to the LLaMA-Factory GitHub repository.]]></description>
             <content:encoded><![CDATA[<p>In the realm of artificial intelligence, <strong>neural networks</strong> and <strong>fine-tuning</strong> are fundamental components that drive the capabilities of <strong>large language models (LLMs)</strong>, like GPT-4 and beyond. The paper “<a href="https://arxiv.org/abs/2403.13372" target="_blank" rel="noopener noreferrer">LLaMA-Factory: Efficient Training Techniques for Large Language Models</a>” delves into methods that optimize training, reduce costs, and improve the performance of LLMs. This article explores the interplay of neural networks, fine-tuning, and LLMs, along with practical insights into model improvement with references to the <a href="https://github.com/hiyouga/LLaMA-Factory" target="_blank" rel="noopener noreferrer">LLaMA-Factory GitHub repository</a>.</p>
 <!-- -->
@@ -67,7 +67,7 @@
             <title><![CDATA[Enhancing Medical Diagnostics with Prompt Engineering: A Deep Dive into AI Accuracy and Potential]]></title>
             <link>https://edujbarrios.github.io/My-TFG-Logbook/es/blog/prompt-engineering-medical-diagnostics</link>
             <guid>https://edujbarrios.github.io/My-TFG-Logbook/es/blog/prompt-engineering-medical-diagnostics</guid>
-            <pubDate>Thu, 07 Nov 2024 01:24:11 GMT</pubDate>
+            <pubDate>Thu, 07 Nov 2024 13:48:21 GMT</pubDate>
             <description><![CDATA[Medical imaging diagnostics are one of the most promising fields for artificial intelligence applications. With advancements in prompt engineering and fine-tuning models, AI is poised to revolutionize diagnostics, making them faster and, potentially, more accurate. In this article, we’ll explore how prompt engineering and AI tools, including fine-tuning and Python, can impact the field of medical diagnostics.]]></description>
             <content:encoded><![CDATA[<p>Medical imaging diagnostics are one of the most promising fields for artificial intelligence applications. With advancements in <strong>prompt engineering</strong> and <strong>fine-tuning models</strong>, AI is poised to revolutionize diagnostics, making them faster and, potentially, more accurate. In this article, we’ll explore how prompt engineering and AI tools, including fine-tuning and Python, can impact the field of medical diagnostics.</p>
 <!-- -->

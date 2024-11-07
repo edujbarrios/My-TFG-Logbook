@@ -61,13 +61,13 @@ a {
   font-weight: bold;
 }
 
-/* In light mode, make bold text appear in the primary violet color */
-[data-theme='light'] b, 
+/* En el modo claro, el texto en negrita (de Markdown) se muestra en morado */
 [data-theme='light'] strong {
-  color: var(--ifm-color-primary); /* Use base violet color for bold text */
+  color: var(--ifm-color-primary); /* Usa el color base morado para el texto en negrita */
 }
 
 /* Header title color */
 .header-title {
   color: var(--header-title-color); /* Set title in the header to white */
 }
+

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_tfg_logbook=self.webpackChunkmy_tfg_logbook||[]).push([[1903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/es/blog","blogTitle":"Blog","authorsListPath":"/es/blog/authors"}')}}]);

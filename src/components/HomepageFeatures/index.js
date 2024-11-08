@@ -9,8 +9,9 @@ import blogImage from '@site/static/img/blog.png';
 
 const FeatureList = [
   {
-    title: 'Docs Section',
+    title: '\nDocs Section',
     image: documentationImage,
+
     description: (
       <>
         Here in this section, I will explain the structure of the logbook. The documentation will detail the day-by-day deployment of my final degree thesis, covering progress, decisions, and methodologies in detail.
@@ -18,7 +19,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'What is this in detail?',
+    title: '\nWhat is this in detail?',
     image: poweredImage,
     description: (
       <>
@@ -27,7 +28,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Blog Section: Research Insights',
+    title: '\nBlog Section: Research Insights',
     image: blogImage,
     description: (
       <>

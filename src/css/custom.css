@@ -71,3 +71,49 @@ a {
   color: var(--header-title-color); /* Set title in the header to white */
 }
 
+.featureContainer {
+  margin-bottom: 2rem; /* Ajusta el espaciado para mayor separación */
+}
+
+.featureImg {
+  max-height: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+}
+
+.titleAndDescription {
+  margin-top: 3rem; /* Separa los títulos y descripciones más hacia abajo */
+  opacity: 0.8; /* Opcional: puedes cambiar la opacidad para darle un efecto sutil */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.homepageSpacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem; /* Para asegurar que haya suficiente espacio inferior */
+}
+
+.highlightPink {
+  color: #FF4D8B; /* Color rosa específico del logo de la sección de documentación */
+  font-weight: bold;
+}
+
+.highlightOrange {
+  color: #FF8C00; /* Color naranja específico de la sección "What is this in detail?" */
+  font-weight: bold;
+}
+
+.highlightBlue {
+  color: #00BFFF; /* Color azul específico de la sección del blog */
+  font-weight: bold;
+}
+
+.featureContainer {
+  margin-bottom: 2rem;
+}
+
+.featureImg {
+  max-height: 200px;
+}
+
+.features {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}

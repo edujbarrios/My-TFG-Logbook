@@ -60,25 +60,29 @@ const config = {
         },
         theme: {
           customCss: './src/css/custom.css',
-      defaultMode: 'dark', // Establece el modo oscuro como predeterminado
-      disableSwitch: false, // Permite a los usuarios cambiar entre modos si está en 'false'
-      respectPrefersColorScheme: false, // Ignora la configuración de color del sistema
         },
       }),
     ],
   ],
 
   themeConfig:
+
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/social-card.jpg',
+      colorMode: {
+        defaultMode: 'dark', // Establece el modo oscuro como predeterminado
+        disableSwitch: false, // Opcional: permite a los usuarios cambiar entre modos si está en 'false'
+        respectPrefersColorScheme: false, // Ignora la configuración de color del sistema
+      },
       navbar: {
         title: 'LLMs and fine tuning in glaucoma detection ',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.png',
         },
+        
         items: [
           {
             type: 'docSidebar',
@@ -139,3 +143,4 @@ const config = {
 };
 
 export default config;
+

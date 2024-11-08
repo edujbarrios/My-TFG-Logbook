@@ -106,8 +106,8 @@ const config = {
             items: [
               {
                 label: 'Introduction to Docs',
-                to: '/docs/intro',
-              },
+              to: "/docs/1-documentation-overview/intro"
+              }
             ],
           },
           {
@@ -143,4 +143,3 @@ const config = {
 };
 
 export default config;
-

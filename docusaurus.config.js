@@ -60,6 +60,9 @@ const config = {
         },
         theme: {
           customCss: './src/css/custom.css',
+      defaultMode: 'dark', // Establece el modo oscuro como predeterminado
+      disableSwitch: false, // Permite a los usuarios cambiar entre modos si está en 'false'
+      respectPrefersColorScheme: false, // Ignora la configuración de color del sistema
         },
       }),
     ],

@@ -1,14 +1,18 @@
+---
+sidebar_position: 1
+---
+
 # Testing Fine-Tuning Images by RIM-ONE with Llama 3.2 3B
 
 ## Introduction
-As a continuation of the documentation, as noticing that 'skinGPT4' properly works, i will be starting to perform a *fine-tuning* of the **Llama 3.2 Vision** model in its 3 billion parameter (3B) version using the **RIM-ONE DL** dataset. RIM-ONE is a database of retinal images created by researchers at the University of La Laguna (ULL), specifically designed for retina analysis in glaucoma detection. This dataset includes images captured in several Spanish hospitals and is divided into different classes for healthy and glaucoma-diagnosed eyes.
+As a continuation of the documentation, noticing that 'skinGPT4' properly works, I will start to perform a *fine-tuning* of the **Llama 3.2 Vision** model in its 3 billion parameter (3B) version using the **RIM-ONE DL** dataset. RIM-ONE is a database of retinal images created by researchers at the University of La Laguna (ULL), specifically designed for retina analysis in glaucoma detection. This dataset includes images captured in several Spanish hospitals and is divided into different classes for healthy and glaucoma-diagnosed eyes.
 
-_**Note: The decision of using the 3B parameter version is that is a really light version and can be performed as test even on google colab.**_(
+_**Note: The decision to use the 3B parameter version is because it is a lightweight version and can be tested even on Google Colab.**_
 
 ## Setting Up the Environment in Google Colab
 
 1. **Upload Dataset to Google Drive**: 
-   - I organize the images in Google Drive into a specific folder structure:
+   - Organize the images in Google Drive into a specific folder structure:
      ```
      partitioned_by_hospital/
      └── training_set/
@@ -17,7 +21,7 @@ _**Note: The decision of using the 3B parameter version is that is a really ligh
      ```
 
 2. **Mount Google Drive**:
-   - I use the following code to mount Google Drive and load the dataset into a Pandas `DataFrame`:
+   - Use the following code to mount Google Drive and load the dataset into a Pandas `DataFrame`:
      ```python
      from google.colab import drive
      import os
@@ -29,12 +33,12 @@ _**Note: The decision of using the 3B parameter version is that is a really ligh
      image_paths = []
      labels = []
 
-    # Load all images in each category without limits
-    for label in ['normal', 'glaucoma']:
-    folder_path = os.path.join(base_path, label)
-    for image_name in os.listdir(folder_path):
-        image_paths.append(os.path.join(folder_path, image_name))
-        labels.append(0 if label == 'normal' else 1)
+     # Load all images in each category without limits
+     for label in ['normal', 'glaucoma']:
+         folder_path = os.path.join(base_path, label)
+         for image_name in os.listdir(folder_path):
+             image_paths.append(os.path.join(folder_path, image_name))
+             labels.append(0 if label == 'normal' else 1)
 
      df = pd.DataFrame({'image_path': image_paths, 'label': labels})
      ```
@@ -134,3 +138,4 @@ print("Analysis result:", response)
 This section demonstrates how to perform *fine-tuning* on a vision model using a specific dataset like **RIM-ONE DL** and adapt it to detect signs of glaucoma in retinal images. The use of a detailed *prompt* allows the model to respond as a "virtual ophthalmologist," providing an exhaustive analysis based on key glaucoma diagnostic parameters.
 
 In the next pages I will be describing the promising results that this first fine-tune does.
+

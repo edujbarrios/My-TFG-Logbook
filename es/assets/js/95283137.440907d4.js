@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_tfg_logbook=self.webpackChunkmy_tfg_logbook||[]).push([[2653],{8224:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/My-TFG-Logbook/es/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

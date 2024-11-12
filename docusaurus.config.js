@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -66,7 +66,6 @@ const config = {
   ],
 
   themeConfig:
-
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
@@ -75,6 +74,14 @@ const config = {
         defaultMode: 'dark', // Establece el modo oscuro como predeterminado
         disableSwitch: false, // Opcional: permite a los usuarios cambiar entre modos si está en 'false'
         respectPrefersColorScheme: false, // Ignora la configuración de color del sistema
+      },
+      announcementBar: {
+        id: 'announcement-bar', // ID único
+        content:
+          '⚠️ La versión en español de esta documentación se agregará pronto. ¡Gracias por tu paciencia!',
+        backgroundColor: '#541087', // Color de fondo violeta
+        textColor: '#FFFFFF', // Letras en blanco
+        isCloseable: true, // Permite cerrar el aviso
       },
       navbar: {
         title: 'LLMs and fine tuning in glaucoma detection ',
@@ -106,7 +113,7 @@ const config = {
             items: [
               {
                 label: 'Introduction to Docs',
-              to: "/docs"
+                to: "/docs"
               }
             ],
           },
@@ -143,3 +150,4 @@ const config = {
 };
 
 export default config;
+

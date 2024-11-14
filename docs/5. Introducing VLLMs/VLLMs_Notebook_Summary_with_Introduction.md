@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 
 ## Introduction to Vision Language Models (VLLMs)
 

@@ -1,0 +1,630 @@
+---
+title: ""
+author: ""
+date: ""
+geometry: margin=1in
+header-includes:
+  - \usepackage{fancyhdr}
+  - \fancyhf{}
+  - \fancyfoot[C]{\thepage}
+  - \usepackage{graphicx}
+  - \usepackage{amsmath}
+  - \usepackage{indentfirst}  # Añade sangría al primer párrafo de cada sección
+  - \usepackage{lmodern}
+  - \usepackage{microtype}
+  - \usepackage{csquotes}
+  - \usepackage{hyperref}
+  - \hypersetup{
+      pdftitle={Prompt engineering driven analysis as a tool to enhance glaucoma detection with convolutional Neural Networks},
+      pdfauthor={Eduardo José Barrios García},
+      pdfsubject={Anteproyecto TFG},
+      colorlinks=true,
+      linkcolor=blue,
+      citecolor=blue
+    }
+  - \setlength{\parindent}{1.5em}  # Configura la sangría para todos los párrafos
+  - \usepackage{tocloft}           # Para modificar el índice
+  - \cftsetindents{section}{0em}{2.3em}  # Ajusta la indentación en el índice
+  - \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}  # Configura puntos en el índice
+execute:
+  pdf-engine: lualatex
+format:
+  pdf:
+    number-sections: true
+---
+
+\begin{titlepage}
+    \begin{center}
+        % Logotipo de la universidad con mayor tamaño (60% del ancho de la página)
+        \includegraphics[width=0.6\textwidth]{images/logos/escuela-ingenieria-tecnologia-original.pdf} \\[1.5cm]
+        
+        % TRABAJO FIN DE GRADO
+        {\Large \textbf{Trabajo fin de grado}} \\[2cm]
+        
+        % Título del proyecto en español
+        {\Huge \textbf{Guía Completa de Deep Learning}} \\[0.5cm]
+        
+        % Título en inglés en cursiva
+        {\Large \textit{Complete Guide to Deep Learning}} \\[2cm] 
+        
+        % Autor del trabajo
+        {\LARGE Eduardo José Barrios García} \\[2cm]
+        
+        % Fecha de presentación
+        {\Large Informe en formato Quarto}
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+# Introducción al deep learning - comentarios inicales
+
+## ¿Qué es el Deep Learning?
+
+Deep Learning es una subdisciplina del aprendizaje automático (machine learning) que se centra en el uso de redes neuronales profundas para modelar patrones complejos y realizar tareas que tradicionalmente eran muy difíciles para los ordenadores. Inspirado en la estructura del cerebro humano, el Deep Learning permite que las computadoras aprendan representaciones jerárquicas y abstractas de los datos, lo cual es especialmente útil para tareas como el reconocimiento de imágenes, el procesamiento del lengu...
+
+A diferencia de los métodos tradicionales de aprendizaje automático, donde los ingenieros diseñaban manualmente las características a extraer de los datos, en Deep Learning el modelo es capaz de aprender esas representaciones automáticamente durante el proceso de entrenamiento. Este tipo de enfoque se ha vuelto factible en los últimos años debido al aumento exponencial de la capacidad computacional y la disponibilidad de grandes volúmenes de datos etiquetados.
+
+Las aplicaciones del Deep Learning son amplias y se extienden a diversos campos como la medicina (para la detección de enfermedades mediante imágenes), la industria automotriz (vehículos autónomos), la industria del entretenimiento (sistemas de recomendación), la finanza (predicción de mercados financieros) y muchos otros más[^2].
+
+## Entorno de Trabajo
+
+###  Entorno de Trabajo
+
+Para desarrollar proyectos de Deep Learning se pueden utilizar varios entornos de trabajo, siendo Google Colab y el entorno local con GPU dos de las opciones más destacadas:
+
+- **Google Colab**: Google Colab es un servicio en la nube que permite ejecutar notebooks de Python sin necesidad de configuraciones locales complejas. Es especialmente útil para proyectos de Deep Learning, ya que ofrece recursos de GPU y TPU gratuitos, lo cual facilita considerablemente el entrenamiento de modelos complejos[^3].
+
+- **Entorno Local con GPU**: Para aquellos usuarios que prefieren más control sobre el hardware o que trabajan con datos muy sensibles, la opción de configurar un entorno local con GPU es una alternativa válida. Esto permite personalizar todos los aspectos de la instalación, desde la versión de Python hasta las librerías que se utilizan[^4].
+
+Cada opción tiene ventajas y desventajas. Google Colab es ideal para experimentar y trabajar sin preocuparse por la configuración del hardware, mientras que el entorno local permite una personalización total y puede ser más eficiente para grandes volúmenes de datos.
+
+### TensorFlow, Keras, y PyTorch
+
+#### TensorFlow
+
+**TensorFlow** es una de las plataformas más populares para el desarrollo de modelos de Deep Learning. Creado por Google, TensorFlow es conocido por su flexibilidad y su capacidad de trabajar tanto en entornos de producción como de investigación. Con TensorFlow se pueden implementar redes neuronales avanzadas y hacer uso de optimizaciones específicas para entrenamiento en GPU[^5].
+
+##### TensorFlow Playground
+
+TensorFlow Playground es una herramienta visual que permite experimentar con redes neuronales y ver el impacto de los diferentes hiperparámetros y funciones de activación.
+
+#### Keras
+
+**Keras** es una API de alto nivel que corre sobre TensorFlow, proporcionando una forma más sencilla y rápida de construir y entrenar modelos de Deep Learning. Keras permite definir modelos con pocas líneas de código y es particularmente útil para prototipado rápido, lo cual facilita el proceso de experimentar con diferentes arquitecturas y configuraciones.
+
+#### PyTorch
+
+**PyTorch** es otro framework ampliamente utilizado para el desarrollo de Deep Learning, desarrollado por Facebook's AI Research lab (FAIR). PyTorch se ha vuelto popular gracias a su enfoque dinámico, que permite mayor flexibilidad durante el entrenamiento y la depuración de modelos. A diferencia de TensorFlow, PyTorch utiliza un enfoque basado en gráficos computacionales dinámicos, lo cual facilita la experimentación y el trabajo con redes neuronales recurrentes[^7].
+
+## Otras librerias importantes
+
+### Librería NumPy
+
+NumPy es una biblioteca fundamental para la computación numérica en Python y es ampliamente utilizada en proyectos de Deep Learning. A través de NumPy, es posible trabajar con arreglos multidimensionales (también llamados tensores) y realizar operaciones matemáticas avanzadas de manera eficiente.
+
+#### Tensor
+
+Un **tensor** es una estructura de datos que generaliza los conceptos de escalares, vectores y matrices a un número arbitrario de dimensiones. En el contexto de NumPy, los tensores son representados como arreglos `ndarray`, donde el número de dimensiones (o ejes) define el "orden" del tensor. Por ejemplo:
+
+- Un escalar es un tensor de orden 0.
+- Un vector es un tensor de orden 1.
+- Una matriz es un tensor de orden 2.
+
+#### Manipulación de los tensores
+
+NumPy permite manipular tensores de varias formas, desde la creación y remodelación hasta la selección y modificación de valores en ubicaciones específicas. Algunas operaciones comunes incluyen:
+
+- **Remodelación**: Cambiar la forma de un tensor utilizando `reshape()`.
+- **Transposición**: Intercambiar ejes de un tensor con `transpose()`.
+- **Selección de elementos**: Seleccionar elementos específicos utilizando indexación avanzada y segmentación.
+
+Estas herramientas permiten transformar y preparar los datos en el formato necesario para alimentar modelos de Deep Learning.
+
+#### Valor máximo en un tensor
+
+Obtener el valor máximo de un tensor es una operación sencilla pero útil, especialmente cuando se trabaja con datos normalizados o cuando se requiere identificar el elemento de mayor valor. En NumPy, esto se puede lograr con la función `np.max()`, que devuelve el valor máximo de un tensor, y `np.argmax()`, que devuelve la posición del valor máximo:
+
+```python
+import numpy as np
+
+tensor = np.array([[1, 2, 3], [4, 5, 6]])
+valor_maximo = np.max(tensor)
+indice_maximo = np.argmax(tensor)
+
+print("Valor máximo:", valor_maximo)
+print("Índice del valor máximo:", indice_maximo)
+
+```
+
+### Otra libería 1
+### Otra libreria 2
+### Otra Librería 3
+
+# Fundamentos del Deep Learning
+
+## Redes Neuronales Densamente Conectadas
+
+### Una Neurona Artificial
+
+Una neurona artificial es la unidad básica de una red neuronal, inspirada en las neuronas biológicas. Su función es recibir un conjunto de entradas, ponderarlas, aplicar una función de activación, y producir una salida.
+
+#### Introducción a la Terminología y Notación Básica
+
+La neurona se caracteriza por:
+- **Entradas (x)**: Representan los datos de entrada a la neurona.
+- **Pesos (w)**: Cada entrada está asociada a un peso que determina la influencia de esa entrada en la salida de la neurona.
+- **Bias (b)**: Un término constante que permite a la neurona ajustar la salida independientemente de las entradas.
+
+La salida de una neurona \( y \) se calcula mediante la ecuación:
+\begin{equation}
+y = f\left(\sum_{i} w_i x_i + b\right)
+\end{equation}
+donde \( f \) es la función de activación.
+
+#### Algoritmos de Regresión
+
+En el contexto de redes neuronales, los algoritmos de regresión se utilizan para ajustar los pesos y el bias de manera que se minimice el error entre las predicciones de la red y los valores reales. La función de error comúnmente utilizada es el error cuadrático medio (MSE):
+\begin{equation}
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+
+#### Una Neurona Artificial Simple
+
+Una neurona artificial simple realiza una operación lineal sobre sus entradas y aplica una función de activación no lineal. Esto le permite aproximar relaciones complejas en los datos.
+
+La función de esta neurona artificial que acabamos de definir puede expresarse de una manera más formal, utilizando la siguiente ecuación:
+
+\begin{equation}
+z = b + \sum_{i} x_i w_i
+\end{equation}
+
+donde:
+- \( x_i \) son las entradas,
+- \( w_i \) son los pesos asociados a cada entrada,
+- \( b \) es el término bias.
+
+La salida \( y \) de la neurona depende de la función de activación que se aplique al valor de \( z \). Para un ejemplo de activación simple, podemos usar una **función escalón**:
+
+\begin{equation}
+y = 
+\begin{cases} 
+      1 & \text{si } z \geq 0 \\
+      0 & \text{si } z < 0 
+   \end{cases}
+\end{equation}
+
+#### Función Sigmoid
+
+Otra función de activación común es la **función sigmoid**, que retorna un valor real de salida entre 0 y 1 para cualquier valor de entrada. Esto es útil en problemas de clasificación binaria, donde queremos interpretar la salida como una probabilidad. La función sigmoid se define como:
+
+\begin{equation}
+y = \frac{1}{1 + e^{-z}}
+\end{equation}
+
+Esta función aplana el valor de salida, limitándolo entre 0 y 1, lo cual es particularmente útil cuando se trabaja con modelos probabilísticos.
+"""
+
+### Redes Neuronales
+
+Las redes neuronales están compuestas por múltiples neuronas interconectadas. Estas conexiones permiten a la red aprender representaciones de los datos y resolver problemas complejos.
+
+#### Perceptrón
+
+El **perceptrón** es la forma más básica de red neuronal y se utiliza principalmente para problemas de clasificación binaria. Su función es aprender una línea de decisión que separe las clases en el espacio de características.
+
+#### Perceptrón Multicapa
+
+El **perceptrón multicapa** (MLP) consiste en varias capas de neuronas. Las capas intermedias entre la entrada y la salida se conocen como **capas ocultas** y permiten a la red aprender representaciones más abstractas.
+
+#### Perceptrón Multicapa para Clasificación
+
+En problemas de clasificación, el MLP aprende a asignar cada entrada a una categoría específica. Utiliza una función de activación como **softmax** en la capa de salida para convertir las puntuaciones en probabilidades.
+
+### Función de Activación Softmax
+
+La función **softmax** es una función de activación utilizada en la capa de salida de redes neuronales para problemas de clasificación multiclase. Convierte los valores de salida en probabilidades que suman 1, facilitando la interpretación de la predicción de cada clase. La función softmax se define como:
+
+\begin{equation}
+\text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j} e^{z_j}}
+\end{equation}
+
+donde \( z_i \) es la salida lineal de la neurona \( i \) y la suma se realiza sobre todas las neuronas en la capa de salida.
+
+La función softmax ayuda a interpretar los resultados en tareas de clasificación, indicando la probabilidad de que una entrada pertenezca a cada una de las clases posibles.
+"""
+
+## 5. Redes Neuronales en Keras
+
+### 5.1. Precarga de los Datos en Keras
+
+Antes de construir una red neuronal en Keras, es fundamental preparar y cargar los datos. Keras facilita este proceso mediante módulos como `keras.datasets`, que incluye conjuntos de datos comunes como MNIST, CIFAR-10, entre otros. Estos conjuntos de datos se pueden cargar directamente, lo que simplifica el proceso de experimentación.
+
+```python
+from tensorflow.keras.datasets import mnist
+
+# Cargar el conjunto de datos de ejemplo Mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+```
+
+### 5.2. Preprocesado de Datos de Entrada en una Red Neuronal
+
+El preprocesado es crucial para que el modelo funcione correctamente. En redes neuronales, los datos suelen normalizarse para que sus valores estén en un rango específico, generalmente entre 0 y 1. Este proceso puede incluir también la codificación de etiquetas en formato one-hot si es necesario para tareas de clasificación.
+
+```python
+# Normalizar las imágenes a valores entre 0 y 1
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+```
+
+### 5.3. Definición del Modelo
+
+La definición del modelo en Keras se hace mediante la creación de una secuencia de capas utilizando `Sequential` o el API funcional. Este paso implica definir las capas, el número de neuronas en cada capa, y las funciones de activación.
+
+```python
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten
+
+# Definir el modelo
+model = Sequential([
+    Flatten(input_shape=(28, 28)),
+    Dense(128, activation='sigmoid'),
+    Dense(10, activation='softmax')
+])
+```
+
+### 5.4. Configuración del Proceso de Aprendizaje
+
+Una vez definido el modelo, es necesario configurarlo para el entrenamiento, lo que implica especificar el optimizador, la función de pérdida y las métricas de evaluación.
+
+```python
+model.compile(optimizer='sgd',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+### 5.5. Entrenamiento del Modelo
+
+El entrenamiento del modelo se realiza usando el método `fit`, donde se pasan los datos de entrenamiento, el número de épocas y el tamaño de lote.
+
+```python
+model.fit(train_images, train_labels, epochs=5, batch_size=32)
+```
+
+### 5.6. Evaluación del Modelo
+
+Después del entrenamiento, es importante evaluar el rendimiento del modelo en el conjunto de datos de prueba. Esto permite verificar su capacidad de generalización.
+
+```python
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print("Precisión en el conjunto de prueba:", test_acc)
+```
+
+### 5.7. Generación de Predicciones
+
+Una vez que el modelo ha sido entrenado y evaluado, se pueden realizar predicciones sobre nuevos datos. Este paso es esencial para la implementación del modelo en un entorno de producción.
+
+```python
+predictions = model.predict(test_images)
+```
+
+### 5.8. FLujo completo
+
+Por resumir los pasos en texto, el flujo completo con un modelo en Keras incluye:
+
+1. **Precarga de los datos**: Cargar el conjunto de datos.
+2. **Preprocesado de datos**: Normalizar y ajustar los datos.
+3. **Definición del modelo**: Crear la arquitectura de la red.
+4. **Configuración del proceso de aprendizaje**: Establecer optimizador, función de pérdida y métricas.
+5. **Entrenamiento del modelo**: Ajustar los pesos en función de los datos de entrenamiento.
+6. **Evaluación del modelo**: Medir el rendimiento del modelo en datos no vistos.
+7. **Generación de predicciones**: Utilizar el modelo entrenado para predecir resultados en nuevos datos.
+
+
+## Fundamento prácticos de redes Redes Neuronales
+
+El entrenamiento de una red neuronal es un proceso iterativo donde el modelo ajusta sus pesos para minimizar el error en las predicciones. Este proceso se basa en optimizar los pesos de las conexiones neuronales para que la salida de la red se aproxime lo más posible a los valores deseados.
+
+#### 6.1.1. Visión Global
+
+En términos generales, el proceso de aprendizaje implica:
+
+1. **Inicialización de pesos**: Los pesos se establecen con valores iniciales (generalmente aleatorios).
+2. **Propagación hacia adelante (Forward Pass)**: Se calculan las salidas de la red en función de las entradas y los pesos actuales.
+3. **Cálculo de la pérdida**: La diferencia entre la salida real y la salida deseada se mide utilizando una función de pérdida.
+
+#### 6.1.2. Proceso Iterativo de Aprendizaje de una Red Neuronal
+
+El aprendizaje en redes neuronales es un proceso iterativo. La red ajusta sus pesos mediante múltiples pasos (o épocas) en los que se calcula el error y se ajustan los pesos para reducir este error.
+
+#### 6.1.3. Piezas Clave del Proceso de Backpropagation
+
+El **backpropagation** o retropropagación es el proceso mediante el cual se calcula el gradiente de la función de pérdida respecto a los pesos de la red. Esta información se utiliza para ajustar los pesos y reducir el error en futuras predicciones. La retropropagación es esencial para el aprendizaje supervisado en redes neuronales.
+
+### 6.2. Descenso del Gradiente
+
+El descenso del gradiente es el algoritmo central en el ajuste de los pesos de una red neuronal. Se basa en la idea de moverse en la dirección opuesta al gradiente de la función de pérdida para minimizar el error.
+
+#### 6.2.1. Algoritmo Básico de Descenso del Gradiente
+
+En el algoritmo básico de descenso del gradiente, los pesos de un modelo se ajustan iterativamente en la dirección opuesta al gradiente de la función de pérdida. Este gradiente indica cómo cambian los errores del modelo en función de los pesos actuales. Para actualizar los pesos, se calcula la pendiente de la función de pérdida con respecto a cada peso. Luego, se multiplican estos valores por una tasa de aprendizaje, que controla el tamaño de cada ajuste en los pesos, y se restan del valor actual de los pesos. Este proceso se repite hasta que la función de pérdida se minimice lo suficiente o hasta que se cumpla otro criterio de parada.
+
+
+#### 6.2.2. Tipos de Descenso del Gradiente
+
+Existen varias variantes del descenso del gradiente:
+
+- **Descenso del Gradiente Estocástico (SGD)**: Actualiza los pesos para cada muestra individual. Es ruidoso, pero más rápido.
+- **Mini-Batch Gradient Descent**: Actualiza los pesos en pequeños lotes, combinando las ventajas del SGD y el descenso por lotes.
+- **Descenso del Gradiente por Lotes**: Calcula el gradiente sobre todo el conjunto de datos antes de actualizar los pesos, pero es más lento en términos computacionales.
+
+### 6.3. Función de Pérdida
+
+La función de pérdida mide la discrepancia entre las predicciones de la red y los valores reales. Existen diferentes tipos de funciones de pérdida dependiendo del tipo de problema:
+
+- **Error Cuadrático Medio (MSE)**: Común en problemas de regresión.
+- **Entropía Cruzada**: Común en problemas de clasificación.
+
+La función de pérdida ayuda a guiar el entrenamiento, indicando cuán lejos están las predicciones de los valores reales.
+
+### 6.4. Optimizadores
+
+Los optimizadores son algoritmos que se utilizan para actualizar los pesos de la red, basándose en el gradiente de la función de pérdida. Algunos de los optimizadores más comunes incluyen:
+
+- **SGD (Descenso de Gradiente Estocástico)**: Una implementación simple del descenso del gradiente.
+- **Adam**: Un optimizador que ajusta la tasa de aprendizaje durante el entrenamiento y suele converger más rápido.
+- **RMSprop**: Optimiza el descenso del gradiente adaptando la tasa de aprendizaje en función de las medias cuadráticas de gradientes pasados.
+
+Estos optimizadores permiten un ajuste más preciso y eficiente de los pesos, acelerando la convergencia del modelo y mejorando su rendimiento.
+
+
+
+## Parámetros e Hiperparámetros en Redes Neuronales
+
+### 7.1. Parametrización de los Modelos
+
+La parametrización de los modelos de redes neuronales es fundamental para ajustar el rendimiento del modelo. Los parámetros y los hiperparámetros determinan cómo la red procesa los datos y aprende.
+
+#### 7.1.1. Motivación por los Hiperparámetros
+
+Los hiperparámetros permiten ajustar el modelo para optimizar su rendimiento en una tarea específica. Elegir adecuadamente los hiperparámetros puede mejorar significativamente la precisión del modelo y su capacidad de generalización.
+
+#### 7.1.2. Parámetros e Hiperparámetros
+
+- **Parámetros**: Son los valores que la red aprende durante el entrenamiento, como los pesos y los sesgos.
+- **Hiperparámetros**: Son valores que configuran el modelo y el proceso de entrenamiento, como la tasa de aprendizaje y el tamaño del lote.
+
+#### 7.1.3. Grupos de Hiperparámetros
+
+Los hiperparámetros pueden clasificarse en diferentes grupos según su propósito y el aspecto del modelo que afectan, como los hiperparámetros de arquitectura y los de optimización.
+
+### 7.2. Hiperparámetros Relacionados con el Algoritmo de Aprendizaje
+
+Algunos hiperparámetros importantes en el proceso de entrenamiento de una red neuronal incluyen:
+
+#### 7.2.1. Número de Epochs
+
+El número de épocas determina cuántas veces la red procesará todo el conjunto de datos durante el entrenamiento.
+
+#### 7.2.2. Batch Size
+
+El tamaño de lote determina cuántas muestras se procesan juntas antes de actualizar los pesos. Los tamaños de lote más pequeños pueden proporcionar una mayor precisión, pero también requieren más tiempo de procesamiento.
+
+#### 7.2.3. Learning Rate y Learning Rate Decay
+
+La tasa de aprendizaje controla el tamaño de los pasos en la actualización de los pesos. La **decadencia de la tasa de aprendizaje** ajusta el valor de la tasa de aprendizaje a medida que el entrenamiento avanza.
+
+#### 7.2.4. Momentum
+
+El momentum permite que el modelo mantenga la dirección del gradiente en actualizaciones sucesivas, lo cual ayuda a evitar oscilaciones y acelera la convergencia.
+
+#### 7.2.5. Inicialización de los Pesos de los Parámetros
+
+La inicialización adecuada de los pesos puede mejorar la velocidad de convergencia y la estabilidad del modelo durante el entrenamiento.
+
+### 7.3. Funciones de Activación
+
+Las funciones de activación añaden no linealidad al modelo, permitiendo que la red neuronal aprenda y represente relaciones complejas. Ejemplos de funciones de activación incluyen **ReLU**, **sigmoid** y **tanh**.
+
+Redes Neuronales Convolucionales
+
+### 8.1. Introducción a las Redes Neuronales Convolucionales
+
+Las redes neuronales convolucionales (CNNs) son una clase de redes neuronales profundas diseñadas para procesar datos estructurados en forma de cuadrículas, como las imágenes. Las CNNs han demostrado ser muy efectivas en tareas de visión por computadora debido a su capacidad para aprender representaciones espaciales jerárquicas.
+
+### 8.2. Componentes Básicos de una Red Neuronal Convolucional
+
+#### 8.2.1. Operación de Convolución
+
+La operación de convolución es el núcleo de las CNNs. Consiste en aplicar filtros (o kernels) sobre las entradas para extraer características de diferentes regiones de la imagen. La salida de una operación de convolución es un mapa de características que resalta patrones específicos en los datos de entrada.
+
+#### 8.2.2. Operación de Pooling
+
+La operación de *pooling* se utiliza para reducir la dimensionalidad de los mapas de características, lo que disminuye el costo computacional y ayuda a evitar el sobreajuste. El *max pooling* es una técnica común, en la que se selecciona el valor máximo en cada región de la característica extraída.
+
+### 8.3. Implementación de un Modelo Básico en Keras
+
+Las CNNs se pueden implementar en Keras utilizando capas como `Conv2D` y `MaxPooling2D`. En esta sección, crearemos un modelo básico en Keras y veremos cómo entrenarlo y evaluarlo.
+
+#### 8.3.1. Arquitectura Básica de una Red Neuronal Convolucional
+
+Una arquitectura básica de CNN consiste en una secuencia de capas de convolución y *pooling*, seguida de una o más capas densas para la clasificación.
+
+
+### 8.4. Hiperparámetros de la Capa Convolucional
+
+Algunos de los hiperparámetros clave de una capa convolucional son:
+
+#### 8.4.1. Tamaño y Número de Filtros
+
+El tamaño de los filtros (kernels) determina el área de la entrada que cada neurona examina, mientras que el número de filtros define cuántas características se extraen en cada capa.
+
+#### 8.4.2. Padding
+
+El *padding* controla si se añade un borde de ceros alrededor de la entrada antes de aplicar la convolución, lo cual permite preservar el tamaño espacial de los datos.
+
+#### 8.4.3. Stride
+
+El *stride* o paso de la convolución determina el número de posiciones que el filtro se desplaza en cada paso. Valores más altos de *stride* resultan en una mayor reducción del tamaño del mapa de características.
+
+#### 8.5.2. Capas y Optimizadores
+
+Para mejorar el rendimiento, se pueden añadir capas adicionales y optimizadores específicos. `Adam` es un optimizador comúnmente utilizado en CNNs.
+
+#### 8.5.3. Capas de Dropout y BatchNormalization
+
+Las capas de *Dropout* ayudan a reducir el sobreajuste al desactivar neuronas aleatoriamente durante el entrenamiento, mientras que *BatchNormalization* normaliza las activaciones, acelerando el aprendizaje.
+
+#### 8.5.4. Decaimiento del Ratio de Aprendizaje
+
+El decaimiento de la tasa de aprendizaje es una técnica que reduce gradualmente la tasa de aprendizaje durante el entrenamiento, permitiendo al modelo converger más suavemente hacia el mínimo de la función de pérdida.
+
+
+## CAPÍTULO 10: Técnicas de Prevención del Sobreentrenamiento
+
+El sobreentrenamiento ocurre cuando un modelo se ajusta demasiado a los datos de entrenamiento, perdiendo su capacidad de generalizar a datos nuevos. Existen varias técnicas para mitigar el sobreentrenamiento, especialmente útiles cuando se dispone de conjuntos de datos pequeños.
+
+### 10.1. Modelos a partir de Conjuntos de Datos Pequeños
+
+Trabajar con conjuntos de datos pequeños es un desafío en Deep Learning, ya que puede llevar al sobreentrenamiento. Algunas estrategias incluyen:
+
+- **Recolección de datos adicionales**: Si es posible, se recomienda ampliar el conjunto de datos.
+- **Data Augmentation**: Aumentar la variabilidad de los datos mediante transformaciones.
+
+### 10.2. Visualización del Comportamiento del Entrenamiento
+
+La visualización de métricas como la pérdida y la precisión durante el entrenamiento puede ayudar a detectar el sobreentrenamiento. Si la precisión en el conjunto de entrenamiento sigue mejorando mientras que la precisión en el conjunto de validación se estanca o disminuye, el modelo está sobreentrenado.
+
+### 10.3. Técnicas de Prevención del Sobreentrenamiento
+
+Algunas técnicas comunes para prevenir el sobreentrenamiento incluyen:
+
+#### 10.3.1. Regularización (L1 y L2)
+
+La regularización L1 y L2 agregan un término de penalización a la función de pérdida, lo que limita el crecimiento de los pesos y reduce el sobreajuste.
+
+#### 10.3.2. Dropout
+
+El *Dropout* es una técnica que desactiva aleatoriamente neuronas durante el entrenamiento, lo que obliga a la red a aprender representaciones más generales.
+
+#### 10.3.3. Early Stopping
+
+La técnica de *Early Stopping* detiene el entrenamiento cuando el rendimiento en el conjunto de validación deja de mejorar, evitando que el modelo se ajuste demasiado.
+
+## CAPÍTULO 11: *Data Augmentation* y *Transfer Learning*
+
+### 11.1. *Data Augmentation*
+
+El *Data Augmentation* es una técnica que genera variaciones de los datos de entrada, aumentando efectivamente el tamaño del conjunto de datos y mejorando la generalización del modelo.
+
+#### 11.1.1. Transformaciones de Imágenes
+
+Algunas transformaciones comunes incluyen:
+
+- **Rotación**: Girar la imagen en un ángulo aleatorio.
+- **Escalado**: Cambiar el tamaño de la imagen.
+- **Traslación**: Mover la imagen en el plano XY.
+- **Flip**: Voltear la imagen horizontal o verticalmente.
+
+#### 11.1.2. Configuración de ImageGenerator
+
+Keras proporciona la clase `ImageDataGenerator` para aplicar *Data Augmentation* de manera eficiente.
+
+```python
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+datagen = ImageDataGenerator(
+    rotation_range=40,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True
+)
+```
+
+#### 11.1.3. Código del Caso de Estudio
+
+En un caso de estudio, podemos aplicar *Data Augmentation* a un conjunto de datos de imágenes para mejorar el rendimiento del modelo en datos de prueba.
+
+### 11.2. *Transfer Learning*
+
+El *Transfer Learning* permite reutilizar un modelo preentrenado en una nueva tarea, ahorrando tiempo y mejorando el rendimiento cuando los datos son limitados.
+
+#### 11.2.1. Concepto de *Transfer Learning*
+
+Consiste en utilizar un modelo preentrenado en una tarea similar y adaptarlo a una nueva tarea mediante un ajuste fino de los últimos parámetros.
+
+#### 11.2.2. *Feature Extraction*
+
+La extracción de características implica congelar las capas iniciales del modelo y utilizar las salidas de estas capas como características de entrada para una nueva tarea.
+
+#### 11.2.3. *Fine-Tuning*
+
+El *fine-tuning* o ajuste fino desbloquea las últimas capas del modelo y las ajusta en el nuevo conjunto de datos para mejorar la precisión.
+
+## CAPÍTULO 12: Arquitecturas Avanzadas de Redes Neuronales
+
+### 12.1. API Funcional de Keras
+
+La API funcional de Keras permite construir modelos más complejos, como redes con múltiples entradas o salidas y capas que no están en secuencia.
+
+#### 12.1.1. Modelo Secuencial
+
+El modelo secuencial es útil para redes simples, donde las capas están apiladas una tras otra.
+
+#### 12.1.2. Modelos Complejos
+
+La API funcional permite la creación de arquitecturas complejas, como redes residuales y modelos con conexiones personalizadas.
+
+### 12.2. Redes Neuronales Preentrenadas
+
+Las redes neuronales preentrenadas permiten reutilizar arquitecturas populares que ya han sido entrenadas en grandes conjuntos de datos como ImageNet.
+
+#### 12.2.1. Redes Neuronales con Nombre Propio
+
+Modelos como **ResNet**, **VGG**, y **Inception** están disponibles como modelos preentrenados en Keras.
+
+#### 12.2.2. Acceso a Redes Preentrenadas con la API Keras
+
+Keras permite cargar modelos preentrenados fácilmente.
+
+```python
+from tensorflow.keras.applications import ResNet50
+
+model = ResNet50(weights='imagenet')
+```
+
+### 12.3. Uso de Redes Preentrenadas con Keras
+
+#### 12.3.1. Conjunto de Datos CIFAR-10
+
+El conjunto de datos CIFAR-10 es una colección de imágenes en 10 clases, comúnmente utilizado para probar redes preentrenadas.
+
+#### 12.3.2. Red Neuronal ResNet50
+
+**ResNet50** es una red profunda basada en bloques residuales, ideal para tareas de clasificación de imágenes complejas.
+
+#### 12.3.3. Red Neuronal VGG19
+
+**VGG19** es una red con 19 capas que se utiliza ampliamente en tareas de visión por computadora.
+
+Con estos modelos, podemos realizar tareas de clasificación avanzada y mejorar la precisión utilizando la técnica de *Transfer Learning*.
+
+# Referencias
+
+[^1]: Ian Goodfellow, Yoshua Bengio, y Aaron Courville. "Deep Learning". MIT Press, 2016.
+[^2]: LeCun, Y., Bengio, Y., & Hinton, G. "Deep learning". Nature, 2015.
+[^3]: Google Colaboratory Documentation. https://colab.research.google.com/notebooks/
+[^4]: NVIDIA CUDA Toolkit Documentation. https://docs.nvidia.com/cuda/
+[^5]: Francois Chollet. "Deep Learning with Python". Manning Publications, 2017.
+[^6]: Haykin, S. "Neural Networks: A Comprehensive Foundation". Prentice Hall, 1998.
+[^7]: Keras Documentation. https://keras.io/
+[^8]: Ruder, S. "An overview of gradient descent optimization algorithms". arXiv preprint arXiv:1609.04747, 2016.
+[^9]: Bengio, Y. "Practical recommendations for gradient-based training of deep architectures". arXiv preprint arXiv:1206.5533, 2012.
+[^10]: He, K., Zhang, X., Ren, S., & Sun, J. "Deep residual learning for image recognition". Proceedings of the IEEE conference on computer vision and pattern recognition, 2016.
+[^11]: Géron, A. "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow". O'Reilly Media, 2019.

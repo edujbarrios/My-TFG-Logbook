@@ -27,6 +27,6 @@ In addition, I came across another repository called **MI-Zero** ([GitHub Reposi
 
 Both approaches have inspired me to develop a prototype in Spanish, demonstrating how to perform **zero-shot learning** linked with CLIP. The prototype is available here:
 
-- [Prototype Notebook](https://github.com/edujbarrios/My-TFG-Logbook/blob/main/notebooks/Probando_ZeroShot_como_altenativa_a_Llama.ipynb)
+- [Prototype Notebook](https://github.com/edujbarrios/My-TFG-Logbook/blob/main/notebooks/Probando_ZeroShot_como_alternativa_a_Llama.ipynb)
 
 **New updates on the State Of The Art, will be added here.**

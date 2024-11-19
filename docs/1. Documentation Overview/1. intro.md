@@ -7,4 +7,4 @@ To keep everything organized, scheduled, and easily accessible, I've created thi
 
 Explore the sidebar to navigate through the different sections of my research, where I've outlined each phase with meticulous detail.
 
-IThanks in advance to the team of Universidad de La Laguna, specifically the guidance and mentorship provided by [Silvia Alayón](https://portalciencia.ull.es/investigadores/81845/detalle) and [Jorge Hernández](https://portalciencia.ull.es/investigadores/152342/detalle), for their invaluable support in this project. Thanks as well to all the dedicated researchers, doctors, and professionals involved in the development of this work.
+Thanks in advance to the team of Universidad de La Laguna, specifically the guidance and mentorship provided by [Silvia Alayón](https://portalciencia.ull.es/investigadores/81845/detalle) and [Jorge Hernández](https://portalciencia.ull.es/investigadores/152342/detalle), for their invaluable support in this project. Thanks as well to all the dedicated researchers, doctors, and professionals involved in the development of this work.

@@ -4,7 +4,7 @@
         <title>LLMs and Fine Tuning in glaucoma detection Blog</title>
         <link>https://edujbarrios.github.io/My-TFG-Logbook/blog</link>
         <description>LLMs and Fine Tuning in glaucoma detection Blog</description>
-        <lastBuildDate>Mon, 25 Nov 2024 14:27:42 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Nov 2024 19:57:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Exploring Medical Diagnostic LLMs: A Comprehensive Guide to Using GitHub's Model Marketplace for Glaucoma Detection in Retinographies]]></title>
             <link>https://edujbarrios.github.io/My-TFG-Logbook/blog/using-github-marketplace-for-glaucoma-diagnostics</link>
             <guid>https://edujbarrios.github.io/My-TFG-Logbook/blog/using-github-marketplace-for-glaucoma-diagnostics</guid>
-            <pubDate>Mon, 25 Nov 2024 14:27:42 GMT</pubDate>
+            <pubDate>Mon, 25 Nov 2024 19:57:52 GMT</pubDate>
             <description><![CDATA[Artificial intelligence (AI) is rapidly evolving in the field of medical diagnostics, particularly with the support of large language models (LLMs) trained to interpret medical images. By utilizing models available on the GitHub Model Marketplace, professionals and developers can test various LLMs on specific tasks, such as analyzing retinographies to detect signs of glaucoma. This guide walks you through setting up a medical diagnostic model from GitHub’s Marketplace to evaluate its performance on glaucoma detection.]]></description>
             <content:encoded><![CDATA[<p>Artificial intelligence (AI) is rapidly evolving in the field of medical diagnostics, particularly with the support of <strong>large language models (LLMs)</strong> trained to interpret medical images. By utilizing models available on the <strong>GitHub Model Marketplace</strong>, professionals and developers can test various LLMs on specific tasks, such as analyzing retinographies to detect signs of glaucoma. This guide walks you through setting up a medical diagnostic model from GitHub’s Marketplace to evaluate its performance on glaucoma detection.</p>
 <p>Additionally, we discuss how these steps can lay the groundwork for potential <strong>fine-tuning</strong>, allowing models to be further optimized for even higher accuracy in specific diagnostic contexts.</p>
@@ -75,7 +75,7 @@
             <title><![CDATA[Leveraging Neural Networks and Fine-Tuning in Large Language Models: A Synergy for Enhanced AI Capabilities]]></title>
             <link>https://edujbarrios.github.io/My-TFG-Logbook/blog/neural-networks-fine-tuning-llms</link>
             <guid>https://edujbarrios.github.io/My-TFG-Logbook/blog/neural-networks-fine-tuning-llms</guid>
-            <pubDate>Mon, 25 Nov 2024 14:27:42 GMT</pubDate>
+            <pubDate>Mon, 25 Nov 2024 19:57:52 GMT</pubDate>
             <description><![CDATA[In the realm of artificial intelligence, neural networks and fine-tuning are fundamental components that drive the capabilities of large language models (LLMs), like GPT-4 and beyond. The paper “LLaMA-Factory: Efficient Training Techniques for Large Language Models” delves into methods that optimize training, reduce costs, and improve the performance of LLMs. This article explores the interplay of neural networks, fine-tuning, and LLMs, along with practical insights into model improvement with references to the LLaMA-Factory GitHub repository.]]></description>
             <content:encoded><![CDATA[<p>In the realm of artificial intelligence, <strong>neural networks</strong> and <strong>fine-tuning</strong> are fundamental components that drive the capabilities of <strong>large language models (LLMs)</strong>, like GPT-4 and beyond. The paper “<a href="https://arxiv.org/abs/2403.13372" target="_blank" rel="noopener noreferrer">LLaMA-Factory: Efficient Training Techniques for Large Language Models</a>” delves into methods that optimize training, reduce costs, and improve the performance of LLMs. This article explores the interplay of neural networks, fine-tuning, and LLMs, along with practical insights into model improvement with references to the <a href="https://github.com/hiyouga/LLaMA-Factory" target="_blank" rel="noopener noreferrer">LLaMA-Factory GitHub repository</a>.</p>
 <!-- -->
@@ -130,7 +130,7 @@
             <title><![CDATA[Enhancing Medical Diagnostics with Prompt Engineering: A Deep Dive into AI Accuracy and Potential]]></title>
             <link>https://edujbarrios.github.io/My-TFG-Logbook/blog/prompt-engineering-medical-diagnostics</link>
             <guid>https://edujbarrios.github.io/My-TFG-Logbook/blog/prompt-engineering-medical-diagnostics</guid>
-            <pubDate>Mon, 25 Nov 2024 14:27:42 GMT</pubDate>
+            <pubDate>Mon, 25 Nov 2024 19:57:52 GMT</pubDate>
             <description><![CDATA[Medical imaging diagnostics are one of the most promising fields for artificial intelligence applications. With advancements in prompt engineering and fine-tuning models, AI is poised to revolutionize diagnostics, making them faster and, potentially, more accurate. In this article, we’ll explore how prompt engineering and AI tools, including fine-tuning and Python, can impact the field of medical diagnostics.]]></description>
             <content:encoded><![CDATA[<p>Medical imaging diagnostics are one of the most promising fields for artificial intelligence applications. With advancements in <strong>prompt engineering</strong> and <strong>fine-tuning models</strong>, AI is poised to revolutionize diagnostics, making them faster and, potentially, more accurate. In this article, we’ll explore how prompt engineering and AI tools, including fine-tuning and Python, can impact the field of medical diagnostics.</p>
 <!-- -->
@@ -161,7 +161,7 @@
             <title><![CDATA[Revolutionizing Glaucoma Detection with Zero-Shot Learning and Lightweight AI]]></title>
             <link>https://edujbarrios.github.io/My-TFG-Logbook/blog/zero-shot-glaucoma-detection</link>
             <guid>https://edujbarrios.github.io/My-TFG-Logbook/blog/zero-shot-glaucoma-detection</guid>
-            <pubDate>Mon, 25 Nov 2024 14:27:42 GMT</pubDate>
+            <pubDate>Mon, 25 Nov 2024 19:57:52 GMT</pubDate>
             <description><![CDATA[AI has brought transformative advancements to medical imaging diagnostics. Among the emerging techniques, zero-shot learning (ZSL) combined with lightweight, adaptable AI models like CLIP (Contrastive Language–Image Pre-training) is setting new benchmarks. This blog explores how ZSL and CLIP can streamline glaucoma detection, a crucial challenge in ophthalmology, making it accessible even for resource-constrained environments.]]></description>
             <content:encoded><![CDATA[<p>AI has brought transformative advancements to medical imaging diagnostics. Among the emerging techniques, <strong>zero-shot learning (ZSL)</strong> combined with lightweight, adaptable AI models like <strong>CLIP (Contrastive Language–Image Pre-training)</strong> is setting new benchmarks. This blog explores how ZSL and CLIP can streamline <strong>glaucoma detection</strong>, a crucial challenge in ophthalmology, making it accessible even for resource-constrained environments.</p>
 <!-- -->
